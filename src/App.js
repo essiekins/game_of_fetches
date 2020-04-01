@@ -30,7 +30,18 @@ export default class App extends Component {
     // 7. Catelyn Stark's PoV book titles
     let seven = "http://www.anapioficeandfire.com/api/characters/232";
 
+
+    //defining method for each url
+    const requestOne = axios.get(one);
+    const requestTwo = axios.get(two);
+    const requestThree = axios.get(three); 
+    const requestFour = axios.get(four);
+    const requestFive = axios.get(five);
+    const requestSix = axios.get(six);
+    const requestSeven = axios.get(seven);
+
   }
+  
 
 
   render() {
