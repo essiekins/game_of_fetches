@@ -53,7 +53,7 @@ export default class App extends Component {
         const responseSix = responses[5];
         const responseSeven= responses[6];
         // use/access the results 
-        console.log(responseOne, responseTwo, responesThree, responseFour, responseFive, responseSix, responseSeven);
+        console.log(responseOne, responseTwo, responseThree, responseFour, responseFive, responseSix, responseSeven);
 
         })).catch(errors => {
           // react on errors.
