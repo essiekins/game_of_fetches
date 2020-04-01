@@ -24,7 +24,7 @@ export default class extends Component{
    //6. House Stark's Founder
    let six="http://www.anapioficeandfire.com/api/houses/362";
    // 7. Catelyn Stark's PoV book titles
-   let seve="http://www.anapioficeandfire.com/api/characters/232";
+   let seven="http://www.anapioficeandfire.com/api/characters/232";
    
 
   }
