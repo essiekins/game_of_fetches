@@ -8,9 +8,9 @@ export default class App extends Component {
     super(props);
 
     this.state = {
+      isLoaded: false,
       data: []
     }
-
   }
 
   componentDidMount() {
@@ -34,23 +34,34 @@ export default class App extends Component {
     //defining method for each url
     const requestOne = axios.get(one);
     const requestTwo = axios.get(two);
-    const requestThree = axios.get(three); 
+    const requestThree = axios.get(three);
     const requestFour = axios.get(four);
     const requestFive = axios.get(five);
     const requestSix = axios.get(six);
     const requestSeven = axios.get(seven);
 
-  }
-  
+    //responses and catching errors for all at once! 
+    axios.all([requestOne, requestTwo, requestThree, requestFour, requestFive,
+      requestSix, requestSeven])
+      .then(axios.spread((...responses) => 
+        const responseOne = responses[0];
+        const responseTwo = responses[1];
+        const responesThree = responses[2];
+        // use/access the results 
+        })).catch(errors => {
+          // react on errors.
+          console.log('There is an error', error)
+        });
+   
 
 
-  render() {
-    return (
-      <div>
-        <h1>Game of Fetches</h1>
-        <h4><em>**GoT threw away 8 years of my life with the ring of a bell**</em> </h4>
-      </div>
-    )
-  }
-
+    render() {
+      return (
+       <div>
+         <h1>Game of Fetches</h1>
+         <h4><em>**GoT threw away 8 years of my life with the ring of a bell**</em> </h4>
+        </div>
+      )
+    }
 }
+
