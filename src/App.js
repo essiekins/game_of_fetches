@@ -41,21 +41,28 @@ export default class App extends Component {
     const requestSeven = axios.get(seven);
 
     //responses and catching errors for all at once! 
+    // remember arrays start at [0]
     axios.all([requestOne, requestTwo, requestThree, requestFour, requestFive,
       requestSix, requestSeven])
-      .then(axios.spread((...responses) => 
+      .then(axios.spread((...responses) => {
         const responseOne = responses[0];
         const responseTwo = responses[1];
-        const responesThree = responses[2];
+        const responseThree = responses[2];
+        const responseFour= responses[3];
+        const responseFive = responses[4];
+        const responseSix = responses[5];
+        const responseSeven= responses[6];
         // use/access the results 
+        console.log(responseOne, responseTwo, responesThree, responseFour, responseFive, responseSix, responseSeven);
+
         })).catch(errors => {
           // react on errors.
-          console.log('There is an error', error)
+          console.log('There is an error', error);
         });
-   
+      };
 
 
-    render() {
+     render() {
       return (
        <div>
          <h1>Game of Fetches</h1>
